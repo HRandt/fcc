@@ -1,0 +1,486 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://character/base.png" type="Texture" id=2]
+[ext_resource path="res://item_shader.tres" type="Material" id=3]
+[ext_resource path="res://ui/background.png" type="Texture" id=4]
+[ext_resource path="res://main_theme.tres" type="Theme" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
+
+[node name="VC" type="ViewportContainer" parent="."]
+margin_left = 608.0
+margin_top = 183.0
+margin_right = 672.0
+margin_bottom = 247.0
+rect_min_size = Vector2( 64, 64 )
+rect_scale = Vector2( 6.719, 6.719 )
+rect_pivot_offset = Vector2( 32, 32 )
+size_flags_vertical = 3
+stretch = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Viewport" type="Viewport" parent="VC"]
+size = Vector2( 64, 64 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+gui_disable_input = true
+
+[node name="Base" type="TextureRect" parent="VC/Viewport"]
+material = ExtResource( 3 )
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+
+[node name="Content" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VCSpace" type="Control" parent="Content"]
+margin_right = 1280.0
+margin_bottom = 430.0
+size_flags_vertical = 3
+
+[node name="Tabs" type="TabContainer" parent="Content"]
+margin_top = 430.0
+margin_right = 1280.0
+margin_bottom = 574.0
+rect_min_size = Vector2( 0, 144 )
+
+[node name="Colors" type="PanelContainer" parent="Content"]
+margin_top = 574.0
+margin_right = 1280.0
+margin_bottom = 697.0
+
+[node name="Content" type="HBoxContainer" parent="Content/Colors"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 1275.0
+margin_bottom = 118.0
+
+[node name="Fur" type="VBoxContainer" parent="Content/Colors/Content"]
+margin_left = 23.0
+margin_right = 87.0
+margin_bottom = 113.0
+size_flags_horizontal = 6
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Content/Colors/Content/Fur"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+flat = true
+color = Color( 1, 1, 1, 1 )
+
+[node name="Label" type="Label" parent="Content/Colors/Content/Fur"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 81.0
+text = "Fur Color"
+align = 1
+autowrap = true
+
+[node name="Inner Ear" type="VBoxContainer" parent="Content/Colors/Content"]
+margin_left = 139.0
+margin_right = 203.0
+margin_bottom = 113.0
+size_flags_horizontal = 6
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Content/Colors/Content/Inner Ear"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+flat = true
+color = Color( 1, 1, 1, 1 )
+
+[node name="Label" type="Label" parent="Content/Colors/Content/Inner Ear"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 97.0
+text = "Inner Ear Color"
+align = 1
+autowrap = true
+
+[node name="Chest Patterns" type="VBoxContainer" parent="Content/Colors/Content"]
+margin_left = 255.0
+margin_right = 319.0
+margin_bottom = 113.0
+size_flags_horizontal = 6
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Content/Colors/Content/Chest Patterns"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+flat = true
+color = Color( 1, 1, 1, 1 )
+
+[node name="Label" type="Label" parent="Content/Colors/Content/Chest Patterns"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 113.0
+text = "Chest Patterns Color"
+align = 1
+autowrap = true
+
+[node name="Face Patterns" type="VBoxContainer" parent="Content/Colors/Content"]
+margin_left = 371.0
+margin_right = 435.0
+margin_bottom = 113.0
+size_flags_horizontal = 6
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Content/Colors/Content/Face Patterns"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+flat = true
+color = Color( 1, 1, 1, 1 )
+
+[node name="Label" type="Label" parent="Content/Colors/Content/Face Patterns"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 113.0
+text = "Face Patterns Color"
+align = 1
+autowrap = true
+
+[node name="Teeth" type="VBoxContainer" parent="Content/Colors/Content"]
+margin_left = 487.0
+margin_right = 551.0
+margin_bottom = 113.0
+size_flags_horizontal = 6
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Content/Colors/Content/Teeth"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+flat = true
+color = Color( 1, 1, 1, 1 )
+
+[node name="Label" type="Label" parent="Content/Colors/Content/Teeth"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 81.0
+text = "Teeth Color"
+align = 1
+autowrap = true
+
+[node name="Nose" type="VBoxContainer" parent="Content/Colors/Content"]
+margin_left = 602.0
+margin_right = 666.0
+margin_bottom = 113.0
+size_flags_horizontal = 6
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Content/Colors/Content/Nose"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+flat = true
+color = Color( 1, 1, 1, 1 )
+
+[node name="Label" type="Label" parent="Content/Colors/Content/Nose"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 81.0
+text = "Nose Color"
+align = 1
+autowrap = true
+
+[node name="Sclera" type="VBoxContainer" parent="Content/Colors/Content"]
+margin_left = 718.0
+margin_right = 782.0
+margin_bottom = 113.0
+size_flags_horizontal = 6
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Content/Colors/Content/Sclera"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+flat = true
+color = Color( 1, 1, 1, 1 )
+
+[node name="Label" type="Label" parent="Content/Colors/Content/Sclera"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 81.0
+text = "Sclera Color"
+align = 1
+autowrap = true
+
+[node name="Iris" type="VBoxContainer" parent="Content/Colors/Content"]
+margin_left = 834.0
+margin_right = 898.0
+margin_bottom = 113.0
+size_flags_horizontal = 6
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Content/Colors/Content/Iris"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+flat = true
+color = Color( 1, 1, 1, 1 )
+
+[node name="Label" type="Label" parent="Content/Colors/Content/Iris"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 81.0
+text = "Iris Color"
+align = 1
+autowrap = true
+
+[node name="Eyebrows" type="VBoxContainer" parent="Content/Colors/Content"]
+margin_left = 950.0
+margin_right = 1014.0
+margin_bottom = 113.0
+size_flags_horizontal = 6
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Content/Colors/Content/Eyebrows"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+flat = true
+color = Color( 1, 1, 1, 1 )
+
+[node name="Label" type="Label" parent="Content/Colors/Content/Eyebrows"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 97.0
+text = "Eyebrows Color"
+align = 1
+autowrap = true
+
+[node name="Hair Front" type="VBoxContainer" parent="Content/Colors/Content"]
+margin_left = 1066.0
+margin_right = 1130.0
+margin_bottom = 113.0
+size_flags_horizontal = 6
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Content/Colors/Content/Hair Front"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+flat = true
+color = Color( 1, 1, 1, 1 )
+
+[node name="Label" type="Label" parent="Content/Colors/Content/Hair Front"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 97.0
+text = "Hair Front Color"
+align = 1
+autowrap = true
+
+[node name="Hair Back" type="VBoxContainer" parent="Content/Colors/Content"]
+margin_left = 1182.0
+margin_right = 1246.0
+margin_bottom = 113.0
+size_flags_horizontal = 6
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Content/Colors/Content/Hair Back"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+flat = true
+color = Color( 1, 1, 1, 1 )
+
+[node name="Label" type="Label" parent="Content/Colors/Content/Hair Back"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 97.0
+text = "Hair Back Color"
+align = 1
+autowrap = true
+
+[node name="Buttons" type="HBoxContainer" parent="Content"]
+margin_top = 697.0
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_constants/separation = 0
+
+[node name="SaveLoad" type="Button" parent="Content/Buttons"]
+margin_right = 320.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "Save / Load"
+
+[node name="Download" type="Button" parent="Content/Buttons"]
+margin_left = 320.0
+margin_right = 640.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "Download"
+
+[node name="Clear All" type="Button" parent="Content/Buttons"]
+margin_left = 640.0
+margin_right = 960.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "Clear All"
+
+[node name="Random" type="Button" parent="Content/Buttons"]
+margin_left = 960.0
+margin_right = 1280.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "Random"
+
+[node name="SaveLoad" type="PopupPanel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -180.0
+margin_right = 320.0
+margin_bottom = 180.0
+
+[node name="Scroll" type="ScrollContainer" parent="SaveLoad"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+scroll_horizontal_enabled = false
+
+[node name="VBox" type="VBoxContainer" parent="SaveLoad/Scroll"]
+margin_right = 630.0
+margin_bottom = 350.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="New" type="Button" parent="SaveLoad/Scroll/VBox"]
+margin_right = 632.0
+margin_bottom = 20.0
+text = "New Save"
+
+[node name="DeleteAll" type="Button" parent="SaveLoad/Scroll/VBox"]
+margin_top = 24.0
+margin_right = 632.0
+margin_bottom = 44.0
+text = "Delete All"
+
+[node name="Name" type="PopupPanel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -90.0
+margin_right = 160.0
+margin_bottom = 90.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Name"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Name/VBoxContainer"]
+margin_top = 52.0
+margin_right = 312.0
+margin_bottom = 65.0
+text = "Enter a name for the save file"
+align = 1
+
+[node name="LineEdit" type="LineEdit" parent="Name/VBoxContainer"]
+margin_top = 69.0
+margin_right = 312.0
+margin_bottom = 92.0
+placeholder_text = "Name"
+caret_blink = true
+
+[node name="OK" type="Button" parent="Name/VBoxContainer"]
+margin_top = 96.0
+margin_right = 312.0
+margin_bottom = 119.0
+text = "OK"
+
+[connection signal="pressed" from="Content/Buttons/SaveLoad" to="." method="_on_SaveLoad_pressed"]
+[connection signal="pressed" from="Content/Buttons/Download" to="." method="_on_Download_pressed"]
+[connection signal="pressed" from="Content/Buttons/Clear All" to="." method="_on_Clear_All_pressed"]
+[connection signal="pressed" from="Content/Buttons/Random" to="." method="_on_Random_pressed"]
+[connection signal="pressed" from="SaveLoad/Scroll/VBox/New" to="." method="_on_New_pressed"]
+[connection signal="pressed" from="SaveLoad/Scroll/VBox/DeleteAll" to="." method="_on_DeleteAll_pressed"]
+[connection signal="text_entered" from="Name/VBoxContainer/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="pressed" from="Name/VBoxContainer/OK" to="." method="_on_OK_pressed"]
